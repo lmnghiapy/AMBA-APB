@@ -34,6 +34,7 @@ module APB_Slave(
 
     assign addr_ok = (addr_index < 1024);
 
+    assign wait_done = (count_reg == target_wait);
     //Wait_State Counter
     always_ff @(posedge PCLK or negedge PRESETn) begin
         if(!PRESETn) begin
